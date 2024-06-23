@@ -13,7 +13,11 @@ def generate_contract(api_key, borrower, loan_amount, interest_rate, term):
     prompt = f"""
     Generate a formal loan contract for Tar Heel Bank as the lender and {borrower} as the borrower.
     The loan amount is ${loan_amount}, with an interest rate of {interest_rate}% and a term of {term} months.
-    Include standard legal language, terms, and conditions for a loan contract.
+    Include standard legal language, terms, and conditions for a loan contract. 
+    Along with the usual sections, the loan also needs to have the following sections: 
+    Severability Clause, Entire Agreement Clause, Amendment Clause, Assignment, Costs and Expenses, 
+    Waiver, No Waiver, Successor and Assigns, and Notices. Include a section for a Guarantee/Guarantor, 
+    as well as space to fill in information about the Guarantor.
     """
     response = client.chat.completions.create(
     model="gpt-4o",  # or "gpt-3.5-turbo", depending on your access
